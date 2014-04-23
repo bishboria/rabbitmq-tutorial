@@ -33,7 +33,7 @@ callback :: (Message,Envelope) -> IO ()
 callback (msg, env) = do
     let body      = BL.unpack $ msgBody msg
         sleepTime = length $ filter (\x -> x == '.') body
-    putStrLn . show $ body
+    putStrLn body
     threadDelay $ 1000000 * sleepTime -- threadDelay takes μSeconds
     putStrLn ""
     ackEnv env

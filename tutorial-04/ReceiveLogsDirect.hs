@@ -34,6 +34,6 @@ main = do
 callback :: (Message,Envelope) -> IO ()
 callback (msg, env) = do
     let body = BL.unpack $ msgBody msg
-    putStrLn . show $ body
+    putStrLn body
     putStrLn ""
     ackEnv env

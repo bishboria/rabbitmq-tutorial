@@ -20,5 +20,5 @@ main = do
 
 callback :: (Message,Envelope) -> IO ()
 callback (msg, env) = do
-    putStrLn . show . BL.unpack $ msgBody msg
+    putStrLn . BL.unpack $ msgBody msg
     putStrLn ""
